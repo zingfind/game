@@ -2,22 +2,6 @@ import tkinter as tk
 from tkinter import *
 from tkinter.ttk import *
 
-def block1event():
-    for widget in frame2.winfo_children():
-        widget.destroy()
-    Label(frame2, text="Welcome.").grid(row=10, column=10, padx=(20, 20), pady=(20, 20))
-    Button(frame2, text="Open the door.", command=opendoor).grid(row=1,column=0)
-
-def opendoor():
-    for widget in frame2.winfo_children():
-        widget.destroy()
-    Label(frame2, text="You can't open this door, it's locked.").grid(row=10, column=10, padx=(20, 20), pady=(20, 20))
-
-def block4event():
-    for widget in frame2.winfo_children():
-        widget.destroy()
-    Label(frame2, text="You walked into a corner").grid(row=10, column=10, padx=(20, 20), pady=(20, 20))
-
 def blockstep(key):
     global currentblock
     #print(currentblock)
@@ -151,30 +135,70 @@ def blockstep(key):
 
 def nwblock():
     print("You're in Northwest Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo1c).grid(row=1,column=0)
 
 def nblock():
     print("You're in North Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo2c).grid(row=1,column=1)
 
 def neblock():
     print("You're in North Eastern Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo3c).grid(row=1,column=2)
 
 def wblock():
     print("You're in Western Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo4c).grid(row=2,column=0)
 
 def cblock():
     print("You're in Central Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo5c).grid(row=2,column=1)
 
 def eblock():
     print("You're in East Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo6c).grid(row=2,column=2)
 
 def swblock():
     print("You're in South Western Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo7c).grid(row=3,column=0)
 
 def sblock():
     print("You're in South Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo8c).grid(row=3,column=1)
 
 def seblock():
     print("You're in South Eastern Block.")
+    resetmap()
+    Button(frame1, text = 'button', image = photo9c).grid(row=3,column=2)
+
+def resetmap():
+    Button(frame1, text = 'button', image = photo1).grid(row=1,column=0)
+    Button(frame1, text = 'button', image = photo2).grid(row=1,column=1)
+    Button(frame1, text = 'button', image = photo3).grid(row=1,column=2)
+    Button(frame1, text = 'button', image = photo4).grid(row=2,column=0)
+    Button(frame1, text = 'button', image = photo5).grid(row=2,column=1)
+    Button(frame1, text = 'button', image = photo6).grid(row=2,column=2)
+    Button(frame1, text = 'button', image = photo7).grid(row=3,column=0)
+    Button(frame1, text = 'button', image = photo8).grid(row=3,column=1)
+    Button(frame1, text = 'button', image = photo9).grid(row=3,column=2)
+
+def startmap():
+    Button(frame1, text = 'button', image = photo1).grid(row=1,column=0)
+    Button(frame1, text = 'button', image = photo2).grid(row=1,column=1)
+    Button(frame1, text = 'button', image = photo3).grid(row=1,column=2)
+    Button(frame1, text = 'button', image = photo4).grid(row=2,column=0)
+    Button(frame1, text = 'button', image = photo5c).grid(row=2,column=1)
+    Button(frame1, text = 'button', image = photo6).grid(row=2,column=2)
+    Button(frame1, text = 'button', image = photo7).grid(row=3,column=0)
+    Button(frame1, text = 'button', image = photo8).grid(row=3,column=1)
+    Button(frame1, text = 'button', image = photo9).grid(row=3,column=2)
 
 root = tk.Tk()
 
@@ -182,11 +206,16 @@ currentblock = "C"
 
 root.bind("<Key>", blockstep)
 
-root.title("Fallout Text RPG")
-root.minsize(1200, 600)
-root.maxsize(1200, 600)
+root.title("Пиксельная Фаллаут РПГ")
+root.minsize(920, 460)
+root.maxsize(920, 460)
 root.geometry("+100+50")
 
+bg = PhotoImage(file = "background.png")
+
+# Show image using label
+label1 = Label(root, image = bg)
+label1.place(x = 0, y = 0)
 
 frame1 = tk.Frame(root, borderwidth=1, relief='ridge')
 frame1.grid(row=0, column=0, padx=(20, 20), pady=(20, 20))
@@ -194,22 +223,28 @@ frame1.grid(row=0, column=0, padx=(20, 20), pady=(20, 20))
 frame2 = tk.Frame(root, borderwidth=1, relief='ridge')
 frame2.grid(row=0, column=1, padx=(20, 20), pady=(20, 20))
 
-photo1 = PhotoImage(file = r"block1.png") 
-Button(frame1, text = 'button', image = photo1, command=block1event).grid(row=1,column=0)
+photo1 = PhotoImage(file = r"nwtile.png")
+photo2 = PhotoImage(file = r"ntile.png")
+photo3 = PhotoImage(file = r"netile.png")
+photo4 = PhotoImage(file = r"wtile.png")
+photo5 = PhotoImage(file = r"ctile.png")
+photo6 = PhotoImage(file = r"etile.png")
+photo7 = PhotoImage(file = r"swtile.png")
+photo8 = PhotoImage(file = r"stile.png")
+photo9 = PhotoImage(file = r"setile.png")
 
-photo2 = PhotoImage(file = r"block2.png") 
-Button(frame1, text = 'button', image = photo2).grid(row=1,column=1)
-photo3 = PhotoImage(file = r"block3.png") 
-Button(frame1, text = 'button', image = photo3).grid(row=1,column=2)
-photo4 = PhotoImage(file = r"block4.png") 
-Button(frame1, text = 'button', image = photo4, command=block4event).grid(row=1,column=3)
-photo5 = PhotoImage(file = r"block5.png")
-Button(frame1, text = 'button', image = photo5, command=block4event).grid(row=2,column=0)
-photo6 = PhotoImage(file = r"block6.png")
-Button(frame1, text = 'button', image = photo6).grid(row=2,column=1)
-photo7 = PhotoImage(file = r"block7.png")
-Button(frame1, text = 'button', image = photo7).grid(row=2,column=2)
-photo8 = PhotoImage(file = r"block8.png")
-Button(frame1, text = 'button', image = photo8).grid(row=2,column=3)
+photo1c = PhotoImage(file = r"nwtilecharacter.png")
+photo2c = PhotoImage(file = r"ntilecharacter.png")
+photo3c = PhotoImage(file = r"netilecharacter.png")
+photo4c = PhotoImage(file = r"wtilecharacter.png")
+photo5c = PhotoImage(file = r"ctilecharacter.png")
+photo6c = PhotoImage(file = r"etilecharacter.png")
+photo7c = PhotoImage(file = r"swtilecharacter.png")
+photo8c = PhotoImage(file = r"stilecharacter.png")
+photo9c = PhotoImage(file = r"setilecharacter.png")
+
+startmap()
 
 root.mainloop()
+
+#I gotta set a background for the whole window as a tiled image.

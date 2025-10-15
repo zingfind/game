@@ -1,7 +1,0 @@
-The game has to be exactly like ASCII ADOM. It has to have a big map.
-
-You will be able to move around with WASD. And each map is made with 3x3 blocks. Blocks will have a type and each type has their own properties.
-
-NPCs can come in the blocks. Blocks have people in them.
-
-I gotta make it so there is a starting area, and that is one file. Consists of 3x3 blocks.
