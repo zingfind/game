@@ -139,10 +139,18 @@ def nwblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Нажать на первую кнопку пульта")
-    listbox.insert(1, "Нажать на вторую кнопку пульта")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Нажать на первую кнопку пульта", width=33, command=remotekey1).grid(row=1,column=0)
+    Button(frame2, text="Нажать на вторую кнопку пульта", width=33, command=remotekey2).grid(row=2,column=0)
+
+def remotekey1():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Что-то произошло.").grid(row=0, column=0)
+
+def remotekey2():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Что-то произошло.").grid(row=0, column=0)
 
 def nblock():
     print("You're in North Block.")
@@ -151,10 +159,18 @@ def nblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Войти в систему компьютера")
-    listbox.insert(2, "Сломать компьютер")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Войти в систему компьютера", width=33, command=computerlogin).grid(row=1,column=0)
+    Button(frame2, text="Ударить по компьютеру", width=33, command=hitcomputer).grid(row=2,column=0)
+
+def computerlogin():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы успешно зашли в систему").grid(row=0, column=0)
+
+def hitcomputer():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы ударили по компьютеру.").grid(row=0, column=0)
 
 def neblock():
     print("You're in North Eastern Block.")
@@ -163,9 +179,12 @@ def neblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Открыть дверь бункера")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Открыть дверь бункера", width=33, command=openbunker).grid(row=1,column=0)
+
+def openbunker():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Дверь не открывается.").grid(row=0, column=0)
 
 def wblock():
     print("You're in Western Block.")
@@ -174,9 +193,12 @@ def wblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Разобраться в мусоре на полу")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Разобраться в мусоре на полу", width=33, command=picktrash).grid(row=1,column=0)
+
+def picktrash():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы нашли пароль от компьютера").grid(row=0, column=0)
 
 def cblock():
     print("You're in Central Block.")
@@ -185,9 +207,12 @@ def cblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Поспать")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Поспать", width=33, command=sleepnow).grid(row=1,column=0)
+
+def sleepnow():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы проснулись отдохнувшим").grid(row=0, column=0)
 
 def eblock():
     print("You're in East Block.")
@@ -196,10 +221,18 @@ def eblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Открыть шкафчики")
-    listbox.insert(2, "Потрясти шкафчики")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Открыть шкафчики", width=33, command=openlocker).grid(row=1,column=0)
+    Button(frame2, text="Потрясти шкафчики", width=33, command=shakelocker).grid(row=2,column=0)
+
+def shakelocker():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Шкафчики сильно шатаются").grid(row=0, column=0)
+
+def openlocker():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Внутри ничего").grid(row=0, column=0)
 
 def swblock():
     print("You're in South Western Block.")
@@ -208,9 +241,12 @@ def swblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Заглянуть в цветочный горшок")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Заглянуть в цветочный горшок", width=33, command=flowerpot).grid(row=1,column=0)
+
+def flowerpot():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы нашли пистолет").grid(row=0, column=0)
 
 def sblock():
     print("You're in South Block.")
@@ -219,9 +255,12 @@ def sblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Заглянуть под ковёр")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Заглянуть под ковёр", width=33, command=checkcarpet).grid(row=1,column=0)
+
+def checkcarpet():
+    for widget in frame3.winfo_children():
+        widget.destroy()
+    Label(frame3, text="Вы лишь встряхнули пыль").grid(row=0, column=0)
 
 def seblock():
     print("You're in South Eastern Block.")
@@ -230,9 +269,7 @@ def seblock():
     for widget in frame2.winfo_children():
         widget.destroy()
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Заглянуть в цветочный горшок")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Заглянуть в цветочный горшок", width=33, command=flowerpot).grid(row=1,column=0)
 
 def resetmap():
     Button(frame1, text = 'button', image = photo1).grid(row=1,column=0)
@@ -256,9 +293,7 @@ def startmap():
     Button(frame1, text = 'button', image = photo8).grid(row=3,column=1)
     Button(frame1, text = 'button', image = photo9).grid(row=3,column=2)
     Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    listbox = Listbox(frame2, width=40, height=0, font=("Arial", 10))
-    listbox.insert(1, "Поспать")
-    listbox.grid(row=1,column=0)
+    Button(frame2, text="Поспать", width=33, command=sleepnow).grid(row=1,column=0)
 
 root = tk.Tk()
 
@@ -266,7 +301,7 @@ currentblock = "C"
 
 root.bind("<Key>", blockstep)
 
-root.title("Фаллаут ролевая игра")
+root.title("Игра")
 root.minsize(920, 460)
 root.maxsize(920, 460)
 root.geometry("+100+50")
