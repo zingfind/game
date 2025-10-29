@@ -2,6 +2,10 @@
 
 A python application where you can explore a 3x3 room and interact with it.
 
+## Screenshot
+
+![Screenshot](screenshot/screenshot.png)
+
 ## Prerequisites
 
 Python
