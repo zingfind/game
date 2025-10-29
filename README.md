@@ -15,9 +15,9 @@ Python
 Run the following:
 
 ```
-git clone https://github.com/zingfind/game
+git clone https://github.com/zingfind/game.git
 cd game
-python3 ./game.py
+python3 game.py
 ```
 
 Use WASD to move your character.
