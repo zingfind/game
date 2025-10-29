@@ -254,13 +254,13 @@ def sblock():
     Button(frame1, text = 'button', image = photo8c).grid(row=3,column=1)
     for widget in frame2.winfo_children():
         widget.destroy()
-    Label(frame2, text="Выбор действия").grid(row=0,column=0)
-    Button(frame2, text="Заглянуть под ковёр", width=33, command=checkcarpet).grid(row=1,column=0)
+    Label(frame2, text="Choose action").grid(row=0,column=0)
+    Button(frame2, text="Look under the carpet", width=33, command=checkcarpet).grid(row=1,column=0)
 
 def checkcarpet():
     for widget in frame3.winfo_children():
         widget.destroy()
-    Label(frame3, text="Вы лишь встряхнули пыль").grid(row=0, column=0)
+    Label(frame3, text="You got dust all over yourself").grid(row=0, column=0)
 
 def seblock():
     print("You're in South Eastern Block.")
@@ -301,7 +301,7 @@ currentblock = "C"
 
 root.bind("<Key>", blockstep)
 
-root.title("Игра")
+root.title("Game")
 root.minsize(920, 460)
 root.maxsize(920, 460)
 root.geometry("+100+50")
